@@ -8,7 +8,7 @@
     <title>Login</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="{{asset('assets')}}/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/fonts/circular-std/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/libs/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <style>
@@ -34,7 +34,7 @@
 <!-- ============================================================== -->
 <div class="splash-container">
     <div class="card ">
-        <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="{{asset('assets')}}/admin/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+        <div class="card-header text-center"><a href="index.html"><img class="logo-img" src="{{asset('assets')}}/admin/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
         <div class="card-body">
             <form action="{{route('admin_logincheck')}}" method="post">
                 @csrf
