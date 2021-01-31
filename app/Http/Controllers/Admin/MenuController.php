@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,9 +27,30 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        $datalist = DB::table('menus')->get()->where('parent_id',0);
+        //print_r($datalist);
+        //exit();
+        return view('admin.menu_add', ['datalist' => $datalist]);
+
+    }
+
+    /**
+     * Insert data
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
+    {
+        DB::table('menus')->insert([
+            'parent_id' => $request->input('parent_id'),
+            'title' => $request->input('title'),
+            'keywords' => $request->input('keywords'),
+            'description' => $request->input('description'),
+            'status' => $request->input('status')
+        ]);
+        return redirect()->route('admin_menu');
     }
 
     /**
@@ -39,7 +61,7 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -71,7 +93,7 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Menu $id)
     {
         //
     }
@@ -82,8 +104,10 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu,$id)
     {
-        //
+        DB::table('menus')->where('id','=', $id)->delete();
+        return redirect()->route('admin_menu');
+
     }
 }

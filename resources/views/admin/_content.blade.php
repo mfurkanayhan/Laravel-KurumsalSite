@@ -116,7 +116,7 @@
                                         <tr>
                                             <td>1</td>
                                             <td>
-                                                <div class="m-r-10"><img src="assets/admin/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                                <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
                                             </td>
                                             <td>Product #1 </td>
                                             <td>id000001 </td>
@@ -129,7 +129,7 @@
                                         <tr>
                                             <td>2</td>
                                             <td>
-                                                <div class="m-r-10"><img src="assets/admin/images/product-pic-2.jpg" alt="user" class="rounded" width="45"></div>
+                                                <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic-2.jpg" alt="user" class="rounded" width="45"></div>
                                             </td>
                                             <td>Product #2 </td>
                                             <td>id000002 </td>
@@ -142,7 +142,7 @@
                                         <tr>
                                             <td>3</td>
                                             <td>
-                                                <div class="m-r-10"><img src="assets/admin/images/product-pic-3.jpg" alt="user" class="rounded" width="45"></div>
+                                                <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic-3.jpg" alt="user" class="rounded" width="45"></div>
                                             </td>
                                             <td>Product #3 </td>
                                             <td>id000003 </td>
@@ -155,7 +155,7 @@
                                         <tr>
                                             <td>4</td>
                                             <td>
-                                                <div class="m-r-10"><img src="assets/admin/images/product-pic-4.jpg" alt="user" class="rounded" width="45"></div>
+                                                <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic-4.jpg" alt="user" class="rounded" width="45"></div>
                                             </td>
                                             <td>Product #4 </td>
                                             <td>id000004 </td>

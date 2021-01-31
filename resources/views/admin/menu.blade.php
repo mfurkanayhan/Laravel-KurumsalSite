@@ -32,7 +32,8 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Menu List</h3>
+                    <a href="{{route('admin_menu_add')}}" type="button" class="btn btn-rounded btn-primary" >Add Menu</a>
+
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -51,23 +52,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($datalist as $rs)
-                            @endforeach
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
-                                </td>
-                                <td>{{$rs->id}}</td>
-                                <td>{{$rs->parent_id}} </td>
-                                <td>{{$rs->title}}</td>
-                                <td>{{$rs->keyword}}</td>
-                                <td>{{$rs->description}}</td>
-                                <td>{{$rs->created_at}}</td>
-                                <td>{{$rs->updated_at}}</td>
-                            </tr>
+                                @foreach($datalist as $rs)
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="{{asset('assets')}}/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
+                                        <td>{{$rs->id}}</td>
+                                        <td>{{$rs->parent_id}} </td>
+                                        <td>{{$rs->title}}</td>
+                                        <td>{{$rs->status}}</td>
+                                        <td> Edit</td>
+                                        <td><a href="{{route('admin_menu_delete', ['id' => $rs-> id])}}" onclick="return confirm('Delete ! Are you sure?')"  >Delete</a></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
-
                         </table>
                     </div>
                 </div>
@@ -81,13 +80,6 @@
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                         Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript: void(0);">About</a>
-                            <a href="javascript: void(0);">Support</a>
-                            <a href="javascript: void(0);">Contact Us</a>
-                        </div>
                     </div>
                 </div>
             </div>
