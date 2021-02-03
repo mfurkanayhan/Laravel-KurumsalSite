@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('title', 'Contents List')
-
+@section('javascript')
+    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+@endsection
 @section('content')
     <!-- wrapper  -->
     <!-- ============================================================== -->
@@ -40,13 +42,13 @@
                         <table class="table">
                             <thead class="bg-light">
                             <tr class="border-0">
+                                <th class="border-0">Image</th>
                                 <th class="border-0">Id</th>
                                 <th class="border-0">Title</th>
                                 <th class="border-0">Keywords</th>
                                 <th class="border-0">Description</th>
-                                <th class="border-0">Image</th>
                                 <th class="border-0">Menu Id</th>
-                                <th class="border-0">Detail</th>
+                                <!-- <th class="border-0">Detail</th> -->
                                 <th class="border-0">Type</th>
                                 <th class="border-0">User Id</th>
                                 <th class="border-0">Status</th>
@@ -57,17 +59,16 @@
                             <tbody>
                                 @foreach($datalist as $rs)
                                     <tr>
-                                        <td>1</td>
                                         <td>
-                                            <div class="m-r-10"><img src="{{asset('assets')}}/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                            <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
                                         </td>
+                                        <td>{{$rs->image}}</td>
                                         <td>{{$rs->id}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->keywords}}</td>
                                         <td>{{$rs->description}}</td>
-                                        <td>{{$rs->image}}</td>
                                         <td>{{$rs->menu_id}}</td>
-                                        <td>{{$rs->detail}}</td>
+                                        <!-- <td>{{$rs->detail}}</td> -->
                                         <td>{{$rs->type}}</td>
                                         <td>{{$rs->user_id}}</td>
                                         <td>{{$rs->status}}</td>

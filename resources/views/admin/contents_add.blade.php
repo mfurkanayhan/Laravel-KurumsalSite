@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('title', 'Add Contents')
+@section('javascript')
+    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+    @endsection
 
 @section('content')
     <!-- wrapper  -->
@@ -86,9 +89,10 @@
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Detail</label>
-                                        <div class="col-9 col-lg-10">
-                                            <input type="text" name="detail" class="form-control">
-                                        </div>
+                                        <textarea name="detail"></textarea>
+                                        <script>
+                                            CKEDITOR.replace( 'detail' );
+                                        </script>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Type</label>
