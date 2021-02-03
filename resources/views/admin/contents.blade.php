@@ -56,13 +56,15 @@
                                 <th class="border-0">Updated At</th>
                             </tr>
                             </thead>
+
                             <tbody>
                                 @foreach($datalist as $rs)
                                     <tr>
                                         <td>
-                                            <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                            @if ($rs->image)
+                                                <div class="m-r-10"><img src="{{Storage::url($rs->image)}}" height="100" alt=""></div>
+                                            @endif
                                         </td>
-                                        <td>{{$rs->image}}</td>
                                         <td>{{$rs->id}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->keywords}}</td>

@@ -50,7 +50,7 @@
                         <div class="card">
                             <h5 class="card-header">Horizontal Form</h5>
                             <div class="card-body">
-                                <form role="form" action="{{route('admin_contents_store')}}" method="post" data-parsley-validate="" novalidate="">
+                                <form role="form" action="{{route('admin_contents_store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Parent</label>
@@ -98,6 +98,13 @@
                                         <label class="col-3 col-lg-2 col-form-label text-right">Type</label>
                                         <div class="col-9 col-lg-10">
                                             <input type="text" name="type" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Image</label>
+                                        <div class="col-9 col-lg-10">
+                                            <input type="file" name="image" class="form-control">
                                         </div>
                                     </div>
 

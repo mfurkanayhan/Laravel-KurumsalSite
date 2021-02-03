@@ -8,6 +8,7 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ContentsController extends Controller
 {
@@ -51,6 +52,8 @@ class ContentsController extends Controller
         $data->detail = $request->input('detail');
         $data->type = $request->input('type');
         $data->status = $request->input('status');
+        $data->image = Storage::putFile('images', $request->file('image')); // File upload
+
         $data->save();
         return redirect()->route('admin_contents');
     }
@@ -99,6 +102,12 @@ class ContentsController extends Controller
         $data->detail = $request->input('detail');
         $data->type = $request->input('type');
         $data->status = $request->input('status');
+
+        if ($request->file('image')!=null)
+        {
+            $data->image=Storage::putFile('images',$request->file('image'));
+        }
+
         $data->save();
         return redirect()->route('admin_contents');
     }

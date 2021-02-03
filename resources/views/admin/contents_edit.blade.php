@@ -50,8 +50,20 @@
                         <div class="card">
                             <h5 class="card-header">Horizontal Form</h5>
                             <div class="card-body">
-                                <form role="form" action="{{route('admin_contents_update',['id'=>$data->id])}}" method="post" data-parsley-validate="" novalidate="">
+                                <form role="form" action="{{route('admin_contents_update',['id'=>$data->id])}}" method="post" data-parsley-validate="" novalidate="" enctype="multipart/form-data">
                                     @csrf
+
+                                    <div class="form-group row">
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Image</label>
+                                        <div class="col-9 col-lg-10">
+                                            <input type="file" name="image" class="form-control">
+
+                                            @if ($data->image),
+                                                <img src="{{ Storage::url($data->image)}}" height="100" alt="">
+                                            @endif
+                                        </div>
+                                    </div>
+
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Parent</label>
                                         <div class="col-9 col-lg-10">
@@ -94,7 +106,7 @@
                                             CKEDITOR.replace( 'detail' );
                                         </script>
                                         <div class="col-9 col-lg-10">
-                                            
+
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -103,6 +115,7 @@
                                             <input type="text" name="type" value="{{$data->type}}" class="form-control">
                                         </div>
                                     </div>
+
 
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Status</label>
