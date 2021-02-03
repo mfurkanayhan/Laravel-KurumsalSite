@@ -25,13 +25,13 @@
                                                 <a class="nav-link" href="{{route('admin_menu')}}">Menu</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="ecommerce-product.html">Product List</a>
+                                                <a class="nav-link" href="{{route('admin_contents')}}">Contents List</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
+                                                <a class="nav-link" href="ecommerce-product-single.html">Contents Single</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
+                                                <a class="nav-link" href="ecommerce-product-checkout.html">Contents Checkout</a>
                                             </li>
                                         </ul>
                                     </div>

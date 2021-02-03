@@ -33,7 +33,7 @@ Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('i
 Route::middleware('auth')->prefix('admin')->group(function (){
 
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
-
+    # Menu
     Route::get('menu', [\App\Http\Controllers\Admin\MenuController::class, 'index'])->name('admin_menu');
     Route::get('menu/add', [\App\Http\Controllers\Admin\MenuController::class, 'add'])->name('admin_menu_add');
     Route::post('menu/create', [\App\Http\Controllers\Admin\MenuController::class, 'create'])->name('admin_menu_create');
@@ -42,6 +42,17 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('menu/delete/{id}', [\App\Http\Controllers\Admin\MenuController::class, 'destroy'])->name('admin_menu_delete');
     Route::get('menu/show', [\App\Http\Controllers\Admin\MenuController::class, 'show'])->name('admin_menu_show');
 
+    #Contents
+    Route::prefix('contents')->group(function (){
+        //Route assigned name "admin.users"...
+        Route::get('/', [\App\Http\Controllers\Admin\ContentsController::class, 'index'])->name('admin_contents');
+        Route::get('create', [\App\Http\Controllers\Admin\ContentsController::class, 'create'])->name('admin_contents_add');
+        Route::post('store', [\App\Http\Controllers\Admin\ContentsController::class, 'store'])->name('admin_contents_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\ContentsController::class, 'edit'])->name('admin_contents_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\ContentsController::class, 'update'])->name('admin_contents_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\ContentsController::class, 'destroy'])->name('admin_contents_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\ContentsController::class, 'show'])->name('admin_contents_show');
+    });
 });
 
 
