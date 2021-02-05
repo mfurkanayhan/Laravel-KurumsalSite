@@ -43,6 +43,7 @@
                             <thead class="bg-light">
                             <tr class="border-0">
                                 <th class="border-0">Image</th>
+                                <th class="border-0">Image Gallery</th>
                                 <th class="border-0">Id</th>
                                 <th class="border-0">Title</th>
                                 <th class="border-0">Keywords</th>
@@ -62,8 +63,11 @@
                                     <tr>
                                         <td>
                                             @if ($rs->image)
-                                                <div class="m-r-10"><img src="{{Storage::url($rs->image)}}" height="100" alt=""></div>
+                                                <div class="m-r-10"><img src="{{Storage::url($rs->image)}}" height="70" alt=""></div>
                                             @endif
+                                        </td>
+                                        <td><a href="{{route('admin_image_add',['contents_id' => $rs->id])}}" onclick="return !window.open(this.href, '', 'top=50 left=100 width=1100, height=700')">
+                                                <img src="{{asset('assets/admin/images')}}/gallery.png" height="45"></a>
                                         </td>
                                         <td>{{$rs->id}}</td>
                                         <td>{{$rs->title}}</td>
@@ -76,8 +80,12 @@
                                         <td>{{$rs->status}}</td>
                                         <td>{{$rs->created_at}}</td>
                                         <td>{{$rs->updated_at}}</td>
-                                        <td> <a href="{{route('admin_contents_edit', ['id' => $rs->id])}}"> Edit</a></td>
-                                        <td><a href="{{route('admin_contents_delete', ['id' => $rs-> id])}}" onclick="return confirm('Delete ! Are you sure?')"  >Delete</a></td>
+                                        <td> <a href="{{route('admin_contents_edit', ['id' => $rs->id])}}"><img src="{{asset('assets/admin/images')}}/edit.png" height="45"></a>
+                                            </a>
+                                        </td>
+                                        <td><a href="{{route('admin_contents_delete', ['id' => $rs-> id])}}" onclick="return confirm('Delete ! Are you sure?')"><img src="{{asset('assets/admin/images')}}/delete.png" height="45"></a>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

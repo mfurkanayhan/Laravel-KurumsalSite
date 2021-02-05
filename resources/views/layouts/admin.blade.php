@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="{{asset('assets')}}/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/fonts/circular-std/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/libs/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/vendor/charts/chartist-bundle/chartist.css">

@@ -53,8 +53,15 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\ContentsController::class, 'destroy'])->name('admin_contents_delete');
         Route::get('show', [\App\Http\Controllers\Admin\ContentsController::class, 'show'])->name('admin_contents_show');
     });
-});
 
+    #Product Image Gallery
+    Route::prefix('image')->group(function (){
+        Route::get('create/{contents_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
+        Route::post('store/{contents_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
+        Route::get('delete/{id}/{contents_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
+    });
+});
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
