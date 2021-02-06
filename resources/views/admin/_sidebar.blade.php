@@ -25,7 +25,7 @@
                                                 <a class="nav-link" href="{{route('admin_menu')}}">Menu</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{route('admin_contents')}}">Contents List</a>
+                                                <a class="nav-link" href="{{route('admin_contents')}}">Contents</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" href="ecommerce-product-single.html">Contents Single</a>
@@ -124,54 +124,7 @@
                         <div id="submenu-7" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/inbox.html">Inbox</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/email-details.html">Email Detail</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/email-compose.html">Email Compose</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/message-chat.html">Message Chat</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Icons</a>
-                        <div id="submenu-8" class="collapse submenu" style="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/icon-fontawesome.html">FontAwesome Icons</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/icon-material.html">Material Icons</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/icon-simple-lineicon.html">Simpleline Icon</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/icon-themify.html">Themify Icon</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/icon-flag.html">Flag Icons</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/icon-weather.html">Weather Icon</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                        <div id="submenu-9" class="collapse submenu" style="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/map-google.html">Google Maps</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/map-vector.html">Vector Maps</a>
+                                    <a class="nav-link" href="{{route('admin_setting')}}">Setting</a>
                                 </li>
                             </ul>
                         </div>
