@@ -53,7 +53,7 @@
                                 <form role="form" action="{{route('admin_contents_store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row">
-                                        <label class="col-3 col-lg-2 col-form-label text-right">Parent</label>
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Menus</label>
                                         <div class="col-9 col-lg-10">
                                             <select class="form-control" name="menu_id">
                                                 @foreach( $datalist as $rs)
@@ -78,13 +78,6 @@
                                         <label class="col-3 col-lg-2 col-form-label text-right">Description</label>
                                         <div class="col-9 col-lg-10">
                                             <input type="text" name="description" class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-3 col-lg-2 col-form-label text-right">Menu Id</label>
-                                        <div class="col-9 col-lg-10">
-                                            <input type="number" name="menu_id" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">

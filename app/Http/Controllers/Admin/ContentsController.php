@@ -95,7 +95,7 @@ class ContentsController extends Controller
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
-        $data->image = $request->input('image');
+        //$data->image = $request->input('image');
         $data->menu_id = $request->input('menu_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');

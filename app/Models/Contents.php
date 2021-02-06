@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Contents extends Model
 {
     use HasFactory;
+
+    #One To Many (Inverse) / Belongs To
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
 }

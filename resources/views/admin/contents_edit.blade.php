@@ -50,7 +50,7 @@
                         <div class="card">
                             <h5 class="card-header">Horizontal Form</h5>
                             <div class="card-body">
-                                <form role="form" action="{{route('admin_contents_update',['id'=>$data->id])}}" method="post" data-parsley-validate="" novalidate="" enctype="multipart/form-data">
+                                <form role="form" action="{{route('admin_contents_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-group row">
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-3 col-lg-2 col-form-label text-right">Parent</label>
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Menus</label>
                                         <div class="col-9 col-lg-10">
                                             <select class="form-control" name="menu_id">
                                                 @foreach( $datalist as $rs)

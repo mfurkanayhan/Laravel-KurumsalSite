@@ -1,5 +1,6 @@
 @extends('layouts.admin')
-
+@php
+@endphp
 @section('title', 'Contents List')
 @section('javascript')
     <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
@@ -45,10 +46,10 @@
                                 <th class="border-0">Image</th>
                                 <th class="border-0">Image Gallery</th>
                                 <th class="border-0">Id</th>
+                                <th class="border-0">Menus</th>
                                 <th class="border-0">Title</th>
                                 <th class="border-0">Keywords</th>
                                 <th class="border-0">Description</th>
-                                <th class="border-0">Menu Id</th>
                                 <!-- <th class="border-0">Detail</th> -->
                                 <th class="border-0">Type</th>
                                 <th class="border-0">User Id</th>
@@ -70,10 +71,10 @@
                                                 <img src="{{asset('assets/admin/images')}}/gallery.png" height="45"></a>
                                         </td>
                                         <td>{{$rs->id}}</td>
+                                        <td>{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->menu->title)}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->keywords}}</td>
                                         <td>{{$rs->description}}</td>
-                                        <td>{{$rs->menu_id}}</td>
                                         <!-- <td>{{$rs->detail}}</td> -->
                                         <td>{{$rs->type}}</td>
                                         <td>{{$rs->user_id}}</td>

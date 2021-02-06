@@ -107,6 +107,19 @@ class MenuController extends Controller
         return redirect()->route('admin_menu');
     }
 
+    public static function getParentsTree($menu,$title)
+    {
+        if ($menu->parent_id==0)
+        {
+            return $title;
+        }
+        $parent=Menu::find($menu->parent_id);
+        $title=$parent->title . '>' . $title;
+
+        return MenuController::getParentsTree($parent,$title);
+    }
+
+
     /**
      * Remove the specified resource from storage.
      *
