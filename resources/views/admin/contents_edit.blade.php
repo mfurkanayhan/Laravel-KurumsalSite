@@ -48,7 +48,7 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Horizontal Form</h5>
+                            <h5 class="card-header">Edit Contents</h5>
                             <div class="card-body">
                                 <form role="form" action="{{route('admin_contents_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                     @csrf
@@ -69,7 +69,9 @@
                                         <div class="col-9 col-lg-10">
                                             <select class="form-control" name="menu_id">
                                                 @foreach( $datalist as $rs)
-                                                    <option value="{{ $rs->id }}" @if ($rs->id == $data->menu_id) selected="selected" @endif > {{$rs->title}}</option>
+                                                    <option value="{{ $rs->id }}" @if ($rs->id == $data->menu_id) selected="selected" @endif >
+                                                        {{ \App\Http\Controllers\Admin\MenuController::getParentsTree($rs, $rs->title) }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>

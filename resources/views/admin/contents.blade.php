@@ -71,7 +71,9 @@
                                                 <img src="{{asset('assets/admin/images')}}/gallery.png" height="45"></a>
                                         </td>
                                         <td>{{$rs->id}}</td>
-                                        <td>{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->menu->title)}}</td>
+                                        <td>
+                                            {{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs->menu, $rs->menu->title) }}
+                                        </td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->keywords}}</td>
                                         <td>{{$rs->description}}</td>

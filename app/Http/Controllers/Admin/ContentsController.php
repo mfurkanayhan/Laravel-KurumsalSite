@@ -30,7 +30,7 @@ class ContentsController extends Controller
      */
     public function create()
     {
-        $datalist = Menu::all();
+        $datalist = Menu::with('children')->get();
         return view('admin.contents_add', ['datalist' => $datalist]);
     }
 
@@ -77,7 +77,7 @@ class ContentsController extends Controller
     public function edit(Contents $contents,$id)
     {
         $data = Contents::find($id);
-        $datalist = Menu::all();
+        $datalist = Menu::with('children')->get();
 
         return view('admin.contents_edit',['data' => $data,'datalist' => $datalist]);
     }
@@ -122,6 +122,8 @@ class ContentsController extends Controller
         //DB::table('contents')->where('id','=', $id)->delete();
         $data = Contents::find($id);
         $data->delete();
+
+
         return redirect()->route('admin_contents');
     }
 }

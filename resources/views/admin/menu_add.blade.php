@@ -50,22 +50,24 @@
                                 <form role="form" action="{{route('admin_menu_create')}}" method="post" data-parsley-validate="" novalidate="">
                                     @csrf
                                     <div class="form-group row">
-                                        <label class="col-3 col-lg-2 col-form-label text-right">Parent</label>
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Parent Menu</label>
                                         <div class="col-9 col-lg-10">
                                             <select class="form-control" name="parent_id">
                                                 <option value="0" selected="selected">Main Menu</option>
                                                 @foreach( $datalist as $rs)
-                                                    <option value="{{ $rs->id }}">{{$rs->title}}</option>
+                                                    <option value="{{ $rs->id }}">{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs, $rs->title)}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Title</label>
                                         <div class="col-9 col-lg-10">
                                             <input type="text" id="title" name="title" class="form-control">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Keywords</label>
                                         <div class="col-9 col-lg-10">

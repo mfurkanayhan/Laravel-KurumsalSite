@@ -41,7 +41,7 @@
                             <thead class="bg-light">
                             <tr class="border-0">
                                 <th class="border-0">Id</th>
-                                <th class="border-0">Parent Id</th>
+                                <th class="border-0">Parent</th>
                                 <th class="border-0">Title</th>
                                 <th class="border-0">Keywords</th>
                                 <th class="border-0">Description</th>
@@ -54,14 +54,18 @@
                             <tbody>
                                 @foreach($datalist as $rs)
                                     <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <div class="m-r-10"><img src="{{asset('assets')}}/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
-                                        </td>
                                         <td>{{$rs->id}}</td>
-                                        <td>{{$rs->parent_id}} </td>
+
+                                        <td>{{ \App\Http\Controllers\Admin\MenuController::getParentsTree($rs, $rs->title)}} </td>
                                         <td>{{$rs->title}}</td>
+                                        <td>{{$rs->keywords}}</td>
+                                        <td>{{$rs->description}}</td>
+                                        <td>
+                                            <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                        </td>
                                         <td>{{$rs->status}}</td>
+                                        <td>{{$rs->created_at}}</td>
+                                        <td>{{$rs->updated_at}}</td>
                                         <td> <a href="{{route('admin_menu_edit', ['id' => $rs->id])}}"> Edit</a></td>
                                         <td><a href="{{route('admin_menu_delete', ['id' => $rs-> id])}}" onclick="return confirm('Delete ! Are you sure?')"  >Delete</a></td>
                                     </tr>
