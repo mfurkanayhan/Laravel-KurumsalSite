@@ -1,3 +1,7 @@
+@php
+    $setting = \App\Models\Setting::first();
+    $setting=\App\Http\Controllers\HomeController::getSetting()
+@endphp
 <!-- Footer Start -->
 <div class="footer">
     <div class="container">
@@ -5,13 +9,11 @@
             <div class="col-md-5">
                 <div class="footer-about">
                     <h2>About Us</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet metus sit amet diam varius commodo. Aliquam at nisl interdum
-                    </p>
-                    <br>
-                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope"></i>info@example.com</p>
+                    <p style="color:Grey">{{$setting->company}}</p>
+                    <P><i class="fa fa-id-card"></i>Muhammet Furkan Ayhan</P>
+                    <p><i class="fa fa-address-book"></i>Murtaza Mah. Hüseyin Karadeniz Cad. No:48/B 67300 KDZ.Ereğli / Zonguldak</p>
+                    <p><i class="fa fa-phone"></i>+905346507385</p>
+                    <p><i class="fa fa-envelope"></i>mfurkana067@gmail.com</p>
                 </div>
             </div>
             <div class="col-md-7">
@@ -19,7 +21,7 @@
                     <div class="col-md-6">
                         <div class="footer-link">
                             <h2>Useful Link</h2>
-                            <a href="">About Us</a>
+                            <a href="{{route('aboutus')}}">About Us</a>
                             <a href="">Our Story</a>
                             <a href="">Our Services</a>
                             <a href="">Our Portfolio</a>
@@ -45,10 +47,10 @@
     <div class="container copyright">
         <div class="row">
             <div class="col-md-6">
-                <p>&copy; <a href="https://htmlcodex.com">HTML Codex</a>, All Right Reserved.</p>
+                <label style="color:Grey">   <script>document.write(new Date().getFullYear());</script>  All rights reserved | {{$setting->company}} </label>
             </div>
             <div class="col-md-6">
-                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                <p> <a href="#">Beats By Dr.Dre</a></p>
             </div>
         </div>
     </div>

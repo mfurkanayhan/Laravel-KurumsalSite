@@ -159,7 +159,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-secondary">Go somewhere</a>
                                 </div>
 
                                 <div class="tab-pane fade" id="smtp-justify" role="tabpanel"
@@ -198,16 +197,16 @@
                                 <div class="tab-pane fade" id="social-justify" role="tabpanel"
                                      aria-labelledby="social-tab-justify">
                                     <div class="form-group row">
-                                        <label class="col-3 col-lg-2 col-form-label text-right">Facebook</label>
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Instagram</label>
                                         <div class="col-9 col-lg-10">
-                                            <input type="text" name="facebook" value="{{$data->facebook}}"
+                                            <input type="text" name="instagram" value="{{$data->instagram}}"
                                                    class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-3 col-lg-2 col-form-label text-right">Instagram</label>
+                                        <label class="col-3 col-lg-2 col-form-label text-right">Facebook</label>
                                         <div class="col-9 col-lg-10">
-                                            <input type="text" name="instagram" value="{{$data->instagram}}"
+                                            <input type="text" name="facebook" value="{{$data->facebook}}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -218,8 +217,6 @@
                                                    class="form-control">
                                         </div>
                                     </div>
-
-
                                 </div>
 
                                 <div class="tab-pane fade" id="aboutus-justify" role="tabpanel"

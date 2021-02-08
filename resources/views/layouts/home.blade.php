@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title> @yield('title') </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="@yield('keywords')" name="keywords">
-    <meta content="@yield('description')" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta name="description" content="@yield('description')">
     <meta name="author" content="Furkan Ayhan">
 
     <!-- Favicon -->

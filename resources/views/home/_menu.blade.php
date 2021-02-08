@@ -1,4 +1,5 @@
 @php
+    $setting = \App\Models\Setting::first();
     $parentMenus = \App\Http\Controllers\HomeController::menuList()
 @endphp
 
@@ -10,20 +11,27 @@
 
     <div class="mainmenu">
         <ul class="nav navbar-nav collapse navbar-collapse">
-            <li><a href="index.html" class="nav-item nav-link active">Home</a></li>
-            <li><a href="about.html" class="nav-item nav-link">About Us</a></li>
-            <li><a href="services.html" class="nav-item nav-link">Services</a></li>
-            <li><a href="portfolio.html" class="nav-item nav-link">Portfolio</a></li>
-            <li><a href="single.html" class="nav-item nav-link">Single Page</a></li>
-            <li><a href="contact.html" class="nav-item nav-link">Contact Us</a></li>
-            <li><a href="#" class="dropdown"> Menus <i class="fa fa-angle-down" ></i> </a>
-                <ul role="menu" class="submenu">
+            <li><a href="{{route('home')}}" class="nav-item nav-link active">Home</a></li>
+            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">About Us</a></li>
+            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Services</a></li>
+            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Portfolio</a></li>
+            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Single Page</a></li>
+            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Contact Us</a></li>
+            <li><a href="{{route('aboutus')}}" class="dropdown"> Menus <i class="fa fa-angle-down" ></i> </a>
+                <ul role="menu" class="submenu" class="btn">
                 @foreach($parentMenus as $rs)
                     <li><a href=""> {{$rs->title}} </a> </li>
                     @endforeach
                 </ul>
             </li>
-            <a href="https://htmlcodex.com/bootstrap-agency-template" class="btn"><i class="fa fa-download"></i>Menus</a>
+            @auth
+                <li><a href="{{route('login')}}" class="btn">{{ Auth::user()->name }}</a></li>
+                <li><a href="{{route('logout')}}" class="btn">Logout</a></li>
+            @endauth
+            @guest
+                <li><a href="{{route('login')}}" class="btn">Login</a></li>
+                <li><a href="{{route('register')}}" class="btn">Register</a></li>
+            @endguest
         </ul>
     </div>
 </div>

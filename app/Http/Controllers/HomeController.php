@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,12 +14,46 @@ class HomeController extends Controller
         return Menu::where('parent_id', '=', 0)->with('children')->get();
     }
 
+    public static function getSetting()
+    {
+        return Setting::first();
+    }
+
     public function index()
     {
-        return view('home.index');
+        $setting = Setting::first();
+        return view('home.index',['setting'=>$setting]);
     }
 
     public function aboutus()
+    {
+        return view('home.about');
+    }
+    public function services()
+    {
+        return view('home.about');
+    }
+    public function portfolio()
+    {
+        return view('home.about');
+    }
+    public function singlepage()
+    {
+        return view('home.about');
+    }
+    public function contactus()
+    {
+        return view('home.about');
+    }
+    public function menus()
+    {
+        return view('home.about');
+    }
+    public function userlogin()
+    {
+        return view('home.about');
+    }
+    public function register()
     {
         return view('home.about');
     }

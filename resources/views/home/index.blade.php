@@ -1,10 +1,10 @@
 @extends('layouts.home')
-
-@section('title', 'Laravel Kurumsal Site')
-@section('description')
-    Türkiyenin en güvenilir kurumsal sitesi.
-@endsection
-@section('keywords','Kurumsal','Hakkımızda','Vizyon','Misyon','Tarihçe')
+@php
+    $setting = \App\Models\Setting::first();
+@endphp
+@section('title',$setting->title)
+@section('description'){{$setting->description}}@endsection
+@section('keywords',$setting->keywords)
 
 @section('content')
     <!-- Hero Start -->
