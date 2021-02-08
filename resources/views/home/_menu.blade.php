@@ -17,15 +17,17 @@
             <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Portfolio</a></li>
             <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Single Page</a></li>
             <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Contact Us</a></li>
+
             <li><a href="{{route('aboutus')}}" class="dropdown"> Menus <i class="fa fa-angle-down" ></i> </a>
-                <ul role="menu" class="submenu" class="btn">
+                <ul role="menu" class="dropdown-menu" class="btn">
                 @foreach($parentMenus as $rs)
                     <li><a href=""> {{$rs->title}} </a> </li>
                     @endforeach
                 </ul>
             </li>
+
             @auth
-                <li><a href="{{route('login')}}" class="btn">{{ Auth::user()->name }}</a></li>
+                <li><a href="{{route('myprofile')}}" class="btn">{{ Auth::user()->name }}</a></li>
                 <li><a href="{{route('logout')}}" class="btn">Logout</a></li>
             @endauth
             @guest
