@@ -61,7 +61,7 @@
 
                             <tbody>
                                 @foreach($datalist as $rs)
-                                    <tr>
+                                    <tr class="border-0">
                                         <td>
                                             @if ($rs->image)
                                                 <div class="m-r-10"><img src="{{Storage::url($rs->image)}}" height="70" alt=""></div>
