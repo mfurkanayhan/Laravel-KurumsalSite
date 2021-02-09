@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
-Route::get('/services', [HomeController::class, 'services'])->name('services');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
 Route::get('/singlepage', [HomeController::class, 'singlepage'])->name('singlepage');
 Route::get('/contactus', [HomeController::class, 'contactus'])->name('contactus');

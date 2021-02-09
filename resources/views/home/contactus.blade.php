@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','About Us -' , $setting->title)
+@section('title','Contact us -' , $setting->title)
 @section('description'){{$setting->description}}@endsection
 @section('keywords',$setting->keywords)
 
@@ -10,7 +10,7 @@
         <div class="container">
             <ul class="blank">
                 <a href="{{route('home')}}">Home</a>
-                <a class="active">About Us</a>
+                <a class="active">Contact Us</a>
             </ul>
         </div>
     </div>
@@ -18,7 +18,13 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                {!! $setting -> aboutus !!}
+                <div class="col-md-6">
+                    {!! $setting->contactus !!}
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="side-title" >İletişim Formu</h3>
+                </div>
             </div>
         </div>
     </div>

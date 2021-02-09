@@ -67,13 +67,11 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="aboutus-tab-justify" data-toggle="tab"
-                                       href="#aboutus-justify" role="tab" aria-controls="aboutus" aria-selected="false">About
-                                        Us</a>
+                                       href="#aboutus-justify" role="tab" aria-controls="aboutus" aria-selected="false">About Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="contact-tab-justify" data-toggle="tab"
-                                       href="#contact-justify" role="tab" aria-controls="contact" aria-selected="false">Contact
-                                        Page</a>
+                                       href="#contact-justify" role="tab" aria-controls="contactus" aria-selected="false">Contact Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="references-tab-justify" data-toggle="tab"
@@ -234,7 +232,7 @@
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Contact</label>
                                         <div class="col-9 col-lg-10">
-                                            <textarea id="contact" name="contact" value="{{$data->contact}}"
+                                            <textarea id="contact" name="contactus" value="{{$data->contactus}}"
                                                       class="form-control"></textarea>
                                         </div>
                                     </div>
@@ -251,7 +249,7 @@
                                     </div>
                                     <script>
                                         CKEDITOR.replace('aboutus');
-                                        CKEDITOR.replace('contact');
+                                        CKEDITOR.replace('contactus');
                                         CKEDITOR.replace('references');
                                     </script>
                                 </div>

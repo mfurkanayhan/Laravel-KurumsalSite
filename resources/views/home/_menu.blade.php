@@ -13,10 +13,10 @@
         <ul class="nav navbar-nav collapse navbar-collapse">
             <li><a href="{{route('home')}}" class="nav-item nav-link active">Home</a></li>
             <li><a href="{{route('aboutus')}}" class="nav-item nav-link">About Us</a></li>
-            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Services</a></li>
+            <li><a href="{{route('references')}}" class="nav-item nav-link">References</a></li>
             <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Portfolio</a></li>
             <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Single Page</a></li>
-            <li><a href="{{route('aboutus')}}" class="nav-item nav-link">Contact Us</a></li>
+            <li><a href="{{route('contactus')}}" class="nav-item nav-link">Contact Us</a></li>
 
             <li><a href="{{route('aboutus')}}" class="dropdown"> Menus <i class="fa fa-angle-down" ></i> </a>
                 <ul role="menu" class="dropdown-menu" class="btn">
