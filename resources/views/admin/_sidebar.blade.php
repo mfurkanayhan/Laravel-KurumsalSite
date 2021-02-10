@@ -126,6 +126,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin_setting')}}">Setting</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('admin_message')}}">Contact Messages</a>
+                                </li>
                             </ul>
                         </div>
                     </li>

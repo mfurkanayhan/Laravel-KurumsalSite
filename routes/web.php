@@ -29,6 +29,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
 Route::get('/singlepage', [HomeController::class, 'singlepage'])->name('singlepage');
 Route::get('/contactus', [HomeController::class, 'contactus'])->name('contactus');
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/menus', [HomeController::class, 'menus'])->name('menus');
 Route::get('/userlogin', [HomeController::class, 'userlogin'])->name('userlogin');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
@@ -60,6 +61,16 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}', [\App\Http\Controllers\Admin\ContentsController::class, 'update'])->name('admin_contents_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\ContentsController::class, 'destroy'])->name('admin_contents_delete');
         Route::get('show', [\App\Http\Controllers\Admin\ContentsController::class, 'show'])->name('admin_contents_show');
+    });
+
+    #Message
+    Route::prefix('message')->group(function (){
+        //Route assigned name "admin.users"...
+        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
     });
 
     #Product Image Gallery
