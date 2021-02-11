@@ -7,6 +7,7 @@
 @section('keywords',$setting->keywords)
 
 @section('content')
+    @include('home._slider')
     <!-- Hero Start -->
     <div class="hero">
         <div class="container-fluid">
@@ -216,10 +217,6 @@
         </div>
     </div>
     <!-- FAQs End -->
-
-
-@include('home._slider')
-
 
     <!-- News Start -->
     <div class="news">
