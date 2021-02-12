@@ -9,7 +9,7 @@
             <div class="col-lg-2">
                 <div class="brand">
                     <a href="{{route('home')}}">
-                        <img src="{{asset('assets')}}/img/logo.png" alt="Logo">
+                        <img src="{{asset('assets')}}/img/dogus.png" alt="Logo">
                     </a>
                 </div>
             </div>
@@ -39,8 +39,8 @@
                                     class="fab fa-twitter"></i></a> @endif
                             @if($setting->facebook != null)<a href="{{$setting->facebook}}" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a> @endif
-                            @if($setting->youtube != null)<a href="{{$setting->youtube}}" target="_blank"><i
-                                    class="fab fa-youtube"></i></a> @endif
+                            @if($setting->youtube != null)<a href="{{$setting->instagram}}" target="_blank"><i
+                                    class="fab fa-instagram"></i></a> @endif
                         </div>
                     </div>
                 </div>

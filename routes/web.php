@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -98,6 +99,26 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
 
     Route::get('user/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('userprofile');
+
+    #Contents
+    Route::prefix('contents')->group(function (){
+        //Route assigned name "admin.users"...
+        Route::get('/', [ContentsController::class, 'index'])->name('user_contents');
+        Route::get('create', [ContentsController::class, 'create'])->name('user_contents_add');
+        Route::post('store', [ContentsController::class, 'store'])->name('user_contents_store');
+        Route::get('edit/{id}', [ContentsController::class, 'edit'])->name('user_contents_edit');
+        Route::post('update/{id}', [ContentsController::class, 'update'])->name('user_contents_update');
+        Route::get('delete/{id}', [ContentsController::class, 'destroy'])->name('user_contents_delete');
+        Route::get('show', [ContentsController::class, 'show'])->name('user_contents_show');
+    });
+
+    #Product Image Gallery
+    Route::prefix('image')->group(function (){
+        Route::get('create/{contents_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('user_image_add');
+        Route::post('store/{contents_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('user_image_store');
+        Route::get('delete/{id}/{contents_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('user_image_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('user_image_show');
+    });
 
 });
 
