@@ -2,9 +2,9 @@
 @php
     $setting = \App\Models\Setting::first();
 @endphp
-@section('title',$setting->title)
-@section('description'){{$setting->description}}@endsection
-@section('keywords',$setting->keywords)
+@section('title',$data->title)
+@section('description'){{$data->description}}@endsection
+@section('keywords',$data->keywords)
 
 @section('content')
 
