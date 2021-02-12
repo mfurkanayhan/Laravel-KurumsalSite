@@ -1,5 +1,7 @@
 @extends('layouts.home')
-
+@php
+    $setting = \App\Models\Setting::first();
+@endphp
 @section('title','About Us -' , $setting->title)
 @section('description'){{$setting->description}}@endsection
 @section('keywords',$setting->keywords)
