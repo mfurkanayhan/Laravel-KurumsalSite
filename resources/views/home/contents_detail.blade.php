@@ -41,7 +41,7 @@
                                     @foreach($datalist as $rs)
                                         <div>
                                             <h6>{{$rs->type}}</h6>
-                                            <img src="{{ Storage::url($rs->image) }}" style="height: 350px"
+                                            <img src="{{ Storage::url($data->image) }}" style="height: 350px"
                                                  alt="testimonial">
                                             <h6>{{$rs->title}} </h6>
                                         </div>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="section-header">
                                     <h2>Clients Review</h2>
-                                    <p>{!!$data->detail!!}</p>
+                                    <p>{{!! $data->detail !!}}</p>
                                 </div>
                             </div>
                         </div>
