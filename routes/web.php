@@ -30,7 +30,8 @@ Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio'
 Route::get('/singlepage', [HomeController::class, 'singlepage'])->name('singlepage');
 Route::get('/contactus', [HomeController::class, 'contactus'])->name('contactus');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
-Route::get('/contents/{id}/{slug}', [HomeController::class, 'contents'])->name('contents');
+Route::get('/contents/{id}/{type}', [HomeController::class, 'contents'])->name('contents');
+Route::get('/menucontents/{id}/{type}', [HomeController::class, 'menucontents'])->name('menucontents');
 Route::get('/menus', [HomeController::class, 'menus'])->name('menus');
 Route::get('/userlogin', [HomeController::class, 'userlogin'])->name('userlogin');
 Route::get('/register', [HomeController::class, 'register'])->name('register');

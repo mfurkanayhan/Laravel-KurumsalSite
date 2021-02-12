@@ -61,7 +61,7 @@
                                         <td>{{$rs->keywords}}</td>
                                         <td>{{$rs->description}}</td>
                                         <td>
-                                            <div class="m-r-10"><img src="{{asset('assets')}}/admin/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
+                                            <div class="m-r-10"><img src="{{asset('assets')}}/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>
                                         </td>
                                         <td>{{$rs->status}}</td>
                                         <td>{{$rs->created_at}}</td>

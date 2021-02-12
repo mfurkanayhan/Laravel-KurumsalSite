@@ -30,7 +30,7 @@
                         <div class="slider-item">
                             <h3>{{$rs->title}}</h3>
                             <h3>{{$rs->type}}</h3>
-                            <a href="{{route('contents',['id'=>$rs->id,'slug'=>$rs->slug])}}"> </a>
+                            <button type="input"> <a href="{{route('contents',['id'=>$rs->id,'type'=>$rs->type])}}"> </a>  </button>
                         </div>
                     </div>
                 </div>

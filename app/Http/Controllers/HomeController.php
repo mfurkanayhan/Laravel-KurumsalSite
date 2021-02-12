@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $slider = Contents::select('id','title','image','type','slug')->limit(4)->get();
+        $slider = Contents::select('id','title','image','type')->limit(4)->get();
         #print_r($slider);
         #exit();
         $data = [
@@ -33,12 +33,20 @@ class HomeController extends Controller
         ];
         return view('home.index',$data);
     }
-    public function contents($id,$slug)
+    public function contents($id)
     {
         $data = Contents::find($id);
         print_r($data);
         exit();
 
+    }
+    public function menucontents($id,$type)
+    {
+        $datalist = Contents::where('menu_id', $id)->get();
+        $data = Menu::find($id);
+        #print_r($data);
+        #exit();
+        return view('home.menu_contents',['data'=>$data,'datalist'=>$datalist]);
     }
 
     public function aboutus()
