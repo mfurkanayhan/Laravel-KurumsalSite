@@ -7,19 +7,19 @@
         @php
             $i=0;
         @endphp
-        @foreach($slider as $rs)
-            @php
-                $i+=1;
-            @endphp
+
         <div class="section-header @if($i==1) active @endif ">
             <h2>Kurumsal</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium ornare velit non</p>
         </div>
-
+            @foreach($slider as $rs)
+                @php
+                    $i+=1;
+                @endphp
             <div class="row"  >
                 <div class="col-12">
                     <div class="testimonial-slider-nav">
-                        <div class="slider-nav"><img src="{{$rs->image_url}}" style="height: 500px" alt="Testimonial">
+                        <div class="slider-nav"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 500px" alt="Testimonial">
                         </div>
                     </div>
                 </div>

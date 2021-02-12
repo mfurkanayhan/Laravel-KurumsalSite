@@ -90,62 +90,18 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium ornare velit non</p>
             </div>
             <div class="row">
+
+                @foreach($slider as $rs)
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item">
-                        <h3>Web Design</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-1.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
+                        <h6>{{$rs->type}}</h6>
+                        <a class="btn" href="{{route('contents',['id'=>$rs->id,'type'=>$rs->type])}}">Learn More</a>
+                        <img src="{{ Storage::url($rs->image) }} " alt="Service">
+                        <h6>{{$rs->title}} </h6>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>Development</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-2.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>UI Design</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-3.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>Programming</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-4.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>Graphic Design</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-5.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>Video Editing</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-6.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>SEO</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-7.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-item">
-                        <h3>Online Marketing</h3>
-                        <img src="{{asset('assets')}}/img/icon-service-8.png" alt="Service">
-                        <p>Lorem ipsum dolor sit amet elit pretium ornare</p>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>

@@ -25,11 +25,14 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $slider = Contents::select('id','title','image','type')->limit(4)->get();
+        $daily = Contents::select('id','title','image','type')->limit(15)->inRandomOrder()->get();
+
         #print_r($slider);
         #exit();
         $data = [
             'setting'=>$setting,
             'slider'=>$slider,
+            'daily'=>$daily,
         ];
         return view('home.index',$data);
     }
