@@ -31,7 +31,7 @@
                     <div class="container">
 
                         <div class>
-                            <div class="col-12">
+                            <div class="col-md-12">
                                 <div class="testimonial-slider-nav">
                                     <div class="slider-nav">
                                         <img src="{{ Storage::url($data->image) }} " style="height: 350px"
@@ -39,11 +39,13 @@
                                     </div>
 
                                     @foreach($datalist as $rs)
-                                        <div>
+                                        <div class="row">
+                                            <div class="col-md-3">
                                             <h6>{{$rs->type}}</h6>
-                                            <img src="{{ Storage::url($data->image) }}" style="height: 350px"
+                                            <img src="{{ Storage::url($rs->image) }}" style="height: 250px"
                                                  alt="testimonial">
                                             <h6>{{$rs->title}} </h6>
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>

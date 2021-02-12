@@ -13,6 +13,18 @@
                     </a>
                 </div>
             </div>
+
+            <!-- search -->
+            <div class="header-search">
+                <form action="{{route('getcontents')}}" method="post">
+                    @csrf
+                    @livewire('search')
+                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                </form>
+                @livewireScripts
+            </div>
+            <!-- /search -->
+
             <div class="col-lg-10">
                 <div class="topbar">
                     <div class="topbar-col">
@@ -23,13 +35,16 @@
                     </div>
                     <div class="topbar-col">
                         <div class="topbar-social">
-                            @if($setting->twitter != null)<a href="{{$setting->twitter}}" target="_blank" ><i class="fab fa-twitter"></i></a> @endif
-                            @if($setting->facebook != null)<a href="{{$setting->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a> @endif
-                            @if($setting->youtube != null)<a href="{{$setting->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a> @endif
+                            @if($setting->twitter != null)<a href="{{$setting->twitter}}" target="_blank"><i
+                                    class="fab fa-twitter"></i></a> @endif
+                            @if($setting->facebook != null)<a href="{{$setting->facebook}}" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a> @endif
+                            @if($setting->youtube != null)<a href="{{$setting->youtube}}" target="_blank"><i
+                                    class="fab fa-youtube"></i></a> @endif
                         </div>
                     </div>
                 </div>
-                 @include('home._menu')
+                @include('home._menu')
             </div>
         </div>
     </div>

@@ -32,6 +32,8 @@ Route::get('/contactus', [HomeController::class, 'contactus'])->name('contactus'
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/contents/{id}/{type}', [HomeController::class, 'contents'])->name('contents');
 Route::get('/menucontents/{id}/{type}', [HomeController::class, 'menucontents'])->name('menucontents');
+Route::get('/getcontents', [HomeController::class, 'getcontents'])->name('getcontents');
+Route::get('/contentslist/{search)', [HomeController::class, 'contentslist'])->name('contentslist');
 Route::get('/menus', [HomeController::class, 'menus'])->name('menus');
 Route::get('/userlogin', [HomeController::class, 'userlogin'])->name('userlogin');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
