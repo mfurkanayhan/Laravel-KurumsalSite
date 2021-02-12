@@ -10,6 +10,12 @@
             <li><a href="{{route('menucontents',['id'=>$rs->id,'type'=>$rs->title])}}">{{$rs->title}}</a></li>
         @endforeach
     </ul>
+    <li><a href="{{route('home')}}" class="btn">Home</a></li>
+    <li><a href="{{route('aboutus')}}" class="btn">About Us</a></li>
+    <li><a href="{{route('contactus')}}" class="btn">Contact Us</a></li>
+    <li><a href="{{route('references')}}" class="btn">References</a></li>
+
+
 
 
     @auth

@@ -47,6 +47,26 @@ class HomeController extends Controller
         return view('home.contents_detail',['data'=>$data,'datalist'=>$datalist]);
 
     }
+    public function getcontents(Request $request)
+    {
+        $search = $request->input('search');
+
+        $count = Contents::where('title', 'like', '%')->get()->count;
+        if ($count==1)
+        {
+            $data = Contents::where('title' , 'like', '%'.$search.'%')->first();
+            return redirect()->route('contents',['id'=>$data->id,'type'=>$data->type]);
+        }
+        else
+        {
+            return redirect()->route('contentslist',['search'=>$search]);
+        }
+    }
+    public function contentslist($search)
+    {
+        $datalist = Contents::where('title' , 'like', '%'.$search.'%')->get();
+        return view('home.search_contents' ,['search'=>$search, 'datalist'=>$datalist]);
+    }
     public function menucontents($id,$type)
     {
         $datalist = Contents::where('menu_id', $id)->get();

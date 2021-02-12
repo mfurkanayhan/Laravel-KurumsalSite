@@ -232,7 +232,7 @@
                                     <div class="form-group row">
                                         <label class="col-3 col-lg-2 col-form-label text-right">Contact</label>
                                         <div class="col-9 col-lg-10">
-                                            <textarea id="contact" name="contactus" value="{{$data->contactus}}"
+                                            <textarea id="contact" name="contact" value="{{$data->contact}}"
                                                       class="form-control"></textarea>
                                         </div>
                                     </div>

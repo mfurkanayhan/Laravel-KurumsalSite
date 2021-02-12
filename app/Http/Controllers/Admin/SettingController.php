@@ -22,7 +22,7 @@ class SettingController extends Controller
         $data = Setting::first();
         if ($data===null) //If setting table is empty add record
         {
-            $data = new Setting();
+            $data = new Setting;
             $data->title = 'Project Title';
             $data->save();
             $data = Setting::first();
